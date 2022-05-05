@@ -1,0 +1,47 @@
+This model simulates persian tapestry. 
+There are 4 cases: 
+
+1- Tapestry with dimensions of 16x16 and 4 ones in the center with nonwrapped borders, associated files are
+	"PersianTapestry16-4.ma", "PersianTapestry16-4.log", "PersianTapestry16-4.val" and "PersianTapestry16-4.bat". 
+
+2- Tapestry with dimensions of 64x64 and 4 ones in the center with nonwrapped borders, associated files are 
+	"PersianTapestry64-4.ma", "PersianTapestry64-4.log",  "PersianTapestry64-4.val" and  "PersianTapestry64-4.bat". 
+
+3- Tapestry with dimensions of 64x64 and 4 ones in the center with wrapped borders, associated files are 
+	"PersianTapestry16-4w.ma", "PersianTapestry16-4w.log", "PersianTapestry16-4.val" and  "PersianTapestry16-4w.bat". 
+	
+4- Tapestry with dimensions of 64x64 and 16 ones in the center with nonwrapped borders, associated files are 
+	"PersianTapestry64-16.ma", "PersianTapestry64-16.log",  "PersianTapestry64-16.val" and  "PersianTapestry64-16.bat". 
+	
+In all cases the pallet file "PersianTapestry.pal" is used. 
+===================================================================================================================
+
+For DEVS-View 3D simulation, you should copy the files "PersianTapestry16-4.ma", "PersianTapestry16-4.log" and 
+	"PersianTapestry16-4DEVSView.vis" in "...\eclipse\plugins\CD++Builder_1.1.0\DEVSview" folder and follow 
+	these steps: 
+	
+	1)	Load the tapestry visualization file by entering the command ‘vis_close’ followed by 
+		‘vis_load PersianTapestry16-4DEVSView’
+	2)	Click on the Models button in the toolbar.  Select the PersianTapestry16-4 model and click on the ‘Edit…’ 
+		button.
+	3)	Click on the ‘Add…’ button next to the visual state list.  Erase the label of the visual state in the 
+		Visual state edit panel that pops up.  Set the color of the visual state to green (Red=0.0,Green=1.0,Blue=0.0)
+	4)	Select the first visual state in the list "s1" (The one that you didn’t just set to red). 
+		Click on the ‘Edit…’ button next to the visual state list.  Set the colour of this visual state to white 
+		(Red=1.0, Green=1.0, Blue=1.0). Do the same step and add two more states with blue and red colors	
+	5)	Add a transition rule by clicking on the ‘Add…’ button next to the transition rule list.
+	6)	Select S1 in the ‘Go to State’ list.  Select ‘Any State’ from the ‘If in State’ list. Select ‘out (O)’ 
+		(the O means its an output port) from the port list. Select the ‘Range of Values’ option from the 
+		‘If this rule is triggered’ list.  For the lower value select 0.0, for the upper value select 1.0.  
+		This creates a rule which transitions the cell visual state from black to red whenever a cell outputs a 
+		value from 0.0 to 1.0.
+	7)	Add three more transition rules, which transition from 1.0 to 2.0, 2.0 to 3.0 and 3.0 to 4.0 with the states 
+		S2, S3 and S4 respectively
+	8)	Save the visualization
+	9)	Close the Model edit panel and the model list panel. Click on the Run button in the toolbar.
+	10)	Use ‘W’, ‘A’, ‘S’, ‘D’ to move the camera. Left click on the window and drag the mouse to rotate the camera.
+	11)	Press play to view the visualization. You should see an animation similar to what is shown in Figures 14, 15 
+	, 16 and 17 of the report.
+	
+
+	
